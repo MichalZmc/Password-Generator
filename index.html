@@ -254,7 +254,7 @@ function generatePassword() {
   if(options.sym) chars += charsets.sym;
 
   if(chars.length === 0) {
-    passwordBox.innerHTML = `<span class="text-neutral-700 text-[11px] uppercase">Wybierz parametry</span>`;
+    passwordBox.innerHTML = `<span class="text-neutral-700 text-[11px] uppercase">Select parameters</span>`;
     copyBtn.classList.add('opacity-0', 'pointer-events-none');
     return;
   }
@@ -289,7 +289,7 @@ copyBtn.addEventListener('click', () => {
   navigator.clipboard.writeText(passwordBox.textContent);
   passwordBox.classList.add('flash-success');
   const originalText = copyBtn.innerHTML;
-  copyBtn.innerHTML = '<i class="fa-solid fa-check mr-2 text-primary"></i> Skopiowano!';
+  copyBtn.innerHTML = '<i class="fa-solid fa-check mr-2 text-primary"></i> Copied!';
   setTimeout(() => {
     passwordBox.classList.remove('flash-success');
     copyBtn.innerHTML = originalText;
